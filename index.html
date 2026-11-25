@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wide Fit Embossed Gel Patch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* Layout: single reading column. Hero with product + four key figures, then selling points, evidence status, cautions. */
+:root{
+  --bg:#f1f2ee;
+  --surface:#ffffff;
+  --ink:#191d1a;
+  --muted:#5b645d;
+  --line:#dcdfd7;
+  --accent:#a67c00;
+  --accent-soft:#f8edc2;
+  --hero:#1b1f1c;
+  --hero-ink:#f4f2ea;
+  --hero-accent:#e9c44a;
+  --warn:#b4491f;
+  --warn-soft:#fbe6dc;
+  --ok:#2c7a4b;
+  --ok-soft:#dff1e5;
+  --display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121512;--surface:#1c201d;--ink:#eceee9;--muted:#a1a9a2;--line:#313732;
+    --accent:#e6bd3c;--accent-soft:#3a3114;--hero:#232823;--hero-ink:#f4f2ea;--hero-accent:#e9c44a;
+    --warn:#f09a73;--warn-soft:#40231a;--ok:#7fcf9c;--ok-soft:#1b3525;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121512;--surface:#1c201d;--ink:#eceee9;--muted:#a1a9a2;--line:#313732;
+  --accent:#e6bd3c;--accent-soft:#3a3114;--hero:#232823;--hero-ink:#f4f2ea;--hero-accent:#e9c44a;
+  --warn:#f09a73;--warn-soft:#40231a;--ok:#7fcf9c;--ok-soft:#1b3525;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:20px 16px 56px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:2rem;font-weight:800}
+h2{font-size:1.35rem;font-weight:800}
+h3{font-size:1.08rem;font-weight:800;line-height:1.25}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+section{display:flex;flex-direction:column;gap:16px}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+
+.hero{background:var(--hero);color:var(--hero-ink);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:stretch}
+.hero-text{padding:28px 24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.hero .eyebrow{color:var(--hero-accent)}
+.hero-lead{font-size:1rem;opacity:.86}
+.hero-img{min-height:220px;background:#e9e9e6}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.14)}
+.stat{padding:16px 14px;display:flex;flex-direction:column;gap:2px;border-left:1px solid rgba(255,255,255,.14);min-width:0}
+.stat:first-child{border-left:0}
+.stat b{font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1.1;color:var(--hero-accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:.78rem;opacity:.8;line-height:1.35}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.78rem;font-weight:500;border:1px solid rgba(255,255,255,.28);padding:2px 10px;border-radius:999px}
+
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0}
+.spec div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.spec dt{font-size:.74rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.spec dd{margin:0;font-weight:700}
+
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.vs>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.vs .after{border-color:var(--accent);box-shadow:inset 0 3px 0 var(--accent)}
+.vs .eyebrow{color:var(--muted)}
+.vs .after .eyebrow{color:var(--accent)}
+
+.points{display:flex;flex-direction:column;gap:12px}
+.point{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:16px}
+.num{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.point .body{display:flex;flex-direction:column;gap:10px;min-width:0}
+
+figure{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+figure img{display:block;width:100%;max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff}
+figcaption{font-size:.78rem;color:var(--muted)}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.figs.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.figs img{aspect-ratio:1/1;object-fit:cover}
+
+.ing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ing>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.big{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums}
+
+.steps{list-style:none;padding:0;counter-reset:s;gap:8px}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 50px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:700;font-size:.8rem;display:grid;place-items:center}
+
+.status{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px;padding:12px 14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .what{flex:1 1 240px;min-width:0}
+.pill{font-size:.76rem;font-weight:700;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+
+.caution{background:var(--warn-soft);border-radius:12px;padding:18px;gap:12px}
+.caution h2{color:var(--warn)}
+footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:560px){
+  h1{font-size:1.6rem}
+  .hero-top{grid-template-columns:minmax(0,1fr)}
+  .hero-img{min-height:0;aspect-ratio:16/10;order:-1}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}
+  .spec{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vs,.ing{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+<main>
+
+<header class="hero">
+  <div class="hero-top">
+    <div class="hero-text">
+      <p class="eyebrow">d'Alba Signature</p>
+      <h1>White Truffle 20% Wide Fit Embossed Gel Patch</h1>
+      <p class="hero-lead">A hydrogel patch rebuilt from the structure up. Patented embossing grips the skin, and a wide shape covers the under-eye, cheek and smile lines in one piece.</p>
+      <div class="tags">
+        <span class="tag">#WrinkleCare</span><span class="tag">#DoubleLock</span><span class="tag">#Patented3DEmboss</span><span class="tag">#HighPotency</span>
+      </div>
+    </div>
+    <div class="hero-img"><img src="img/patch.jpg" alt="Wide embossed gel patch with its small side patch"></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>170</b><span>patented embossed domes per patch</span></div>
+    <div class="stat"><b>20%</b><span>white truffle water</span></div>
+    <div class="stat"><b>106nm</b><span>Peptide Exosome™ particle size</span></div>
+    <div class="stat"><b>3 zones</b><span>eye area, cheek and smile lines in one patch</span></div>
+  </div>
+</header>
+
+<section>
+  <h2>At a glance</h2>
+  <dl class="spec">
+    <div><dt>Format</dt><dd>Hydrogel patch + side patch</dd></div>
+    <div><dt>Patch size</dt><dd>7.6 × 6.1 cm</dd></div>
+    <div><dt>Side patch</dt><dd>4.1 × 1.4 cm</dd></div>
+    <div><dt>Key actives</dt><dd>Peptide Exosome™, white truffle</dd></div>
+    <div><dt>Wear time</dt><dd>About 1 to 1.5 hours</dd></div>
+    <div><dt>Certification</dt><dd>V-Label vegan (Italy)</dd></div>
+  </dl>
+</section>
+
+<section>
+  <h2>Why it exists</h2>
+  <div class="vs">
+    <div>
+      <span class="eyebrow">Regular hydrogel patches</span>
+      <ul>
+        <li>Slip and fall off, so people stop using them</li>
+        <li>Feel hydrating only while they are on</li>
+        <li>Cover only the under-eye</li>
+      </ul>
+    </div>
+    <div class="after">
+      <span class="eyebrow">Wide Fit Embossed Patch</span>
+      <ul>
+        <li>170 domes seal to the skin like suction</li>
+        <li>Tighter contact carries actives deeper, for longer-lasting moisture</li>
+        <li>One patch covers eye area, cheek and smile lines</li>
+      </ul>
+    </div>
+  </div>
+  <figure><img src="img/old-patch.jpg" alt="A regular hydrogel patch peeling away from the face" style="aspect-ratio:16/9;object-fit:cover;object-position:top"><figcaption>The problem: regular patches slide and peel away.</figcaption></figure>
+</section>
+
+<section>
+  <h2>Four selling points</h2>
+  <div class="points">
+    <article class="point">
+      <span class="num">1</span>
+      <div class="body">
+        <h3>Press to seal: 170 patented embossed domes</h3>
+        <ul>
+          <li>Korea's first embossed hydrogel patch</li>
+          <li>Pressing the patch creates a vacuum seal that follows expression lines and facial contours</li>
+          <li>Closer contact helps the nourishing actives absorb more deeply</li>
+          <li>Color-change gel: the patch turns clear and thin as it absorbs, in about 1 to 1.5 hours (varies by person)</li>
+        </ul>
+        <div class="figs three">
+          <figure><img src="img/emboss-before.jpg" alt="Patch resting on the skin before pressing"><figcaption>Before pressing</figcaption></figure>
+          <figure><img src="img/emboss-after.jpg" alt="Patch sealed to the skin after pressing"><figcaption>Sealed</figcaption></figure>
+          <figure><img src="img/clear-after.jpg" alt="Patch turned transparent after absorption"><figcaption>Clear after absorption</figcaption></figure>
+        </div>
+      </div>
+    </article>
+    <article class="point">
+      <span class="num">2</span>
+      <div class="body">
+        <h3>Wide fit, from the eye area to the smile lines</h3>
+        <ul>
+          <li>Eye area: thin skin that moves more than 10,000 times a day</li>
+          <li>Cheeks: where dryness and loss of firmness show first</li>
+          <li>Around the mouth: lines that set in from talking and smiling</li>
+          <li>The small side patch works on the brow furrow or the bridge of the nose</li>
+          <li>For anyone who finds sheet masks a hassle but still wants a targeted treatment at home</li>
+        </ul>
+        <div class="figs">
+          <figure><img src="img/wide-fit.jpg" alt="Wide fit patch covering the under-eye and cheek" style="object-position:top"><figcaption>Under-eye, cheek and smile line in one patch</figcaption></figure>
+          <figure><img src="img/patch-size.jpg" alt="Patch size diagram"><figcaption>Patch dimensions</figcaption></figure>
+        </div>
+      </div>
+    </article>
+    <article class="point">
+      <span class="num">3</span>
+      <div class="body">
+        <h3>Proprietary actives at high concentration</h3>
+        <ul>
+          <li>Peptide Exosome™ plus 20% white truffle water</li>
+          <li>The gel is a nourishing serum set into patch form</li>
+          <li>Aimed at the eye area, where collagen and elastin decline first</li>
+        </ul>
+      </div>
+    </article>
+    <article class="point">
+      <span class="num">4</span>
+      <div class="body">
+        <h3>Gentle enough for the eye area</h3>
+        <ul>
+          <li>V-Label vegan certified in Italy</li>
+          <li>A mild formula made for thin, delicate eye-area skin</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Key ingredients</h2>
+  <figure><img src="img/texture.jpg" alt="Close-up of the embossed hydrogel texture" style="aspect-ratio:16/9;object-fit:cover"><figcaption>A serum set into a bouncy hydrogel</figcaption></figure>
+  <div class="ing">
+    <div>
+      <h3>Peptide Exosome™</h3>
+      <span class="big">106nm</span>
+      <p class="small">Italian white truffle exosome combined with 99% pure, low-molecular Dipeptide-15. At 467 times smaller than a pore (average values), it is built to get past the poor absorption of ordinary peptides.</p>
+    </div>
+    <div>
+      <h3>White truffle water</h3>
+      <span class="big">20%</span>
+      <p class="small">Premium Italian white truffle for moisture and nourishment, for skin that stays hydrated and bouncy.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Who it is for</h2>
+  <ul>
+    <li>People who want to treat existing eye-area lines and smile lines</li>
+    <li>People who want lasting moisture and firmness, not the brief dewiness of a regular eye patch</li>
+    <li>People who skip sheet masks but want a high-performance treatment on specific areas</li>
+    <li>People who need a fast, focused routine before an event or when skin feels run down</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How to use</h2>
+  <ol class="steps">
+    <li>Use as the last step of skincare, after toner, lotion and cream.</li>
+    <li>Place the dimpled, embossed side on the skin and press lightly with fingers and palm. You will hear the domes seal.</li>
+    <li>The patch starts turning clear after about an hour.</li>
+    <li>Once the whole patch is clear, remove it and pat in what remains.</li>
+  </ol>
+</section>
+
+<footer>d'Alba Signature · White Truffle 20% Wide Fit Embossed Gel Patch</footer>
+
+</main>
+</body>
+</html>
